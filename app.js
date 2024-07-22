@@ -26,6 +26,9 @@ app.use("/users", usersRouter);
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/penduduk", require("./routes/penduduk"));
 app.use("/api/service-requests", require("./routes/serviceRequests"));
+app.use("/", (req, res) => {
+  res.send("Selamat datang di Aplikasi pengelolaan penduduk");
+});
 // Sync database
 sequelize
   .sync()
