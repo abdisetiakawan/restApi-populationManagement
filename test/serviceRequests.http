@@ -1,0 +1,22 @@
+# Replace 'your_token_here' with the token you get from login
+
+### Create a new service request
+POST http://localhost:3000/api/service-requests
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6InVzZXIiLCJpYXQiOjE3MjE1MzM1NDcsImV4cCI6MTcyMTUzNzE0N30.nTuJYAWBJOCX2V83LrjvNRLGhxpYIC_cZN1ENM3qr0A
+Content-Type: application/json
+
+{
+  "idPenduduk": 1,
+  "jenisLayanan": "Surat Keterangan Domisili",
+  "statusPermohonan": "Pending",
+  "tanggalPermohonan": "2024-07-21"
+}
+
+### Update service request status
+PUT http://localhost:3000/api/service-requests/5
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6InVzZXIiLCJpYXQiOjE3MjE1MzQxNTIsImV4cCI6MTcyMTUzNzc1Mn0.y1XJ1cHVwqGViZ18gvdHA91lgq5X2qkTmjObbd-QAdU
+Content-Type: application/json
+
+{
+  "statusPermohonan": "Approved"
+}

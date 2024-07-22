@@ -1,0 +1,44 @@
+# Replace 'your_token_here' with the token you get from login
+
+### Create a new resident
+POST http://localhost:3000/api/penduduk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6InVzZXIiLCJpYXQiOjE3MjE1MzUwNzQsImV4cCI6MTcyMTUzODY3NH0.DS_sR4BJ3LnE0FFezELj2-xIsRbJIWlYeJDxXAJredI
+Content-Type: application/json
+
+{
+  "nama": "John Doe",
+  "alamat": "123 Main St",
+  "telepon": "08123456789",
+  "jenisKelamin": "Male",
+  "tanggalLahir": "1990-01-01",
+  "agama": "Christian",
+  "kewarganegaraan": "Indonesian",
+  "statusPerkawinan": "Single",
+  "pekerjaan": "Software Developer",
+  "nomorKTP": "123456789012223456"
+}
+
+### Update resident data
+PUT http://localhost:3000/api/penduduk/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6InVzZXIiLCJpYXQiOjE3MjE1MzUwNzQsImV4cCI6MTcyMTUzODY3NH0.DS_sR4BJ3LnE0FFezELj2-xIsRbJIWlYeJDxXAJredI
+Content-Type: application/json
+
+{
+  "alamat": "Tamanan"
+}
+
+### Delete resident data
+DELETE http://localhost:3000/api/penduduk/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzIxNTMyNjUzLCJleHAiOjE3MjE1MzYyNTN9.Ki18qiWTp-vw-2eFQyLKIVkxAarnczMOwkBh5wIPmr0
+
+### Search for residents
+GET http://localhost:3000/api/penduduk?nomorKTP=12345678901223456
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6InVzZXIiLCJpYXQiOjE3MjE1MzUwNzQsImV4cCI6MTcyMTUzODY3NH0.DS_sR4BJ3LnE0FFezELj2-xIsRbJIWlYeJDxXAJredI
+
+### Get resident change history
+GET http://localhost:3000/api/penduduk/1/riwayat
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzIxNTMyNjUzLCJleHAiOjE3MjE1MzYyNTN9.Ki18qiWTp-vw-2eFQyLKIVkxAarnczMOwkBh5wIPmr0
+
+### Get service requests for a resident
+GET http://localhost:3000/api/penduduk/1/layanan
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzIxNTMyNjUzLCJleHAiOjE3MjE1MzYyNTN9.Ki18qiWTp-vw-2eFQyLKIVkxAarnczMOwkBh5wIPmr0
