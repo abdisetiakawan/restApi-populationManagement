@@ -1,5 +1,5 @@
 ### Register User
-POST http://localhost:3000/api/auth/register
+POST https://salmaparadisa-production.up.railway.app/api/auth/register
 Content-Type: application/json
 
 {
@@ -9,7 +9,7 @@ Content-Type: application/json
 }
 
 ### Register Admin
-POST http://localhost:3000/api/auth/register
+POST https://salmaparadisa-production.up.railway.app/api/auth/register
 Content-Type: application/json
 
 {
@@ -19,7 +19,7 @@ Content-Type: application/json
 }
 
 ### Login User
-POST http://localhost:3000/api/auth/login
+POST https://salmaparadisa-production.up.railway.app/api/auth/login
 Content-Type: application/json
 
 {
@@ -28,7 +28,7 @@ Content-Type: application/json
 }
 
 ### Login Admin
-POST http://localhost:3000/api/auth/login
+POST https://salmaparadisa-production.up.railway.app/api/auth/login
 Content-Type: application/json
 
 {

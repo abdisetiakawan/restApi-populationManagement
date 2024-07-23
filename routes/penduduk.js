@@ -6,6 +6,39 @@ const ServiceRequest = require("../models/serviceRequest");
 const authenticateToken = require("../middleware/authenticateToken");
 const authorizeAdmin = require("../middleware/authorizeAdmin");
 
+/* 
+  Menambahkan Penduduk Baru:
+
+Route: POST /
+Middleware: authenticateToken, authorizeAdmin
+Proses: Data penduduk baru diambil dari body request dan digunakan untuk membuat entitas penduduk baru dalam database. Jika berhasil, respons dengan status 201 (Created) dan data penduduk dikirimkan.
+Memperbarui Data Penduduk:
+
+Route: PUT /:id
+Middleware: authenticateToken, authorizeAdmin
+Proses: Id penduduk diambil dari parameter request dan data yang diperbarui diambil dari body request. Jika penduduk ditemukan, data diperbarui dan dicatat dalam riwayat perubahan. Jika tidak ditemukan, respons dengan status 404 (Not Found) dikirimkan.
+Menghapus Data Penduduk:
+
+Route: DELETE /:id
+Middleware: authenticateToken, authorizeAdmin
+Proses: Id penduduk diambil dari parameter request. Jika penduduk ditemukan, data dihapus dari database. Jika tidak ditemukan, respons dengan status 404 (Not Found) dikirimkan.
+Mencari Penduduk:
+
+Route: GET /
+Middleware: authenticateToken, authorizeAdmin
+Proses: Query parameters digunakan untuk membangun kondisi pencarian (whereClause). Penduduk yang cocok dengan kondisi pencarian dikembalikan sebagai respons.
+Mendapatkan Riwayat Perubahan Data Penduduk:
+
+Route: GET /:id/riwayat
+Middleware: authenticateToken, authorizeAdmin
+Proses: Id penduduk diambil dari parameter request. Riwayat perubahan data penduduk dikembalikan sebagai respons.
+Mendapatkan Permintaan Layanan untuk Penduduk:
+
+Route: GET /:id/layanan
+Middleware: authenticateToken, authorizeAdmin
+Proses: Id penduduk diambil dari parameter request. Permintaan layanan yang terkait dengan penduduk dikembalikan sebagai respons.
+*/
+
 // Create a new resident
 router.post("/", authenticateToken, authorizeAdmin, async (req, res) => {
   try {
